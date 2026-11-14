@@ -10,6 +10,7 @@ public class MergeSortAction extends RecursiveAction {
     public MergeSortAction(int[] array) {
         this(array, 0, array.length - 1);
     }
+
     private MergeSortAction(int[] array, int left, int right) {
         this.array = array;
         this.left = left;
@@ -31,14 +32,14 @@ public class MergeSortAction extends RecursiveAction {
 
     private void merge(int left, int middle, int right) {
         int[] temporary = new int[right - left + 1];
-        int i =  left;
+        int i = left;
         int j = middle + 1;
         int k = 0;
         while (i <= middle && j <= right) {
             if (array[i] <= array[j]) {
                 temporary[k] = array[i];
                 i++;
-            }  else {
+            } else {
                 temporary[k] = array[j];
                 j++;
             }
